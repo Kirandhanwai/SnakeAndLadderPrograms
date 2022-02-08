@@ -16,6 +16,7 @@ public class SnakeAndLadder {
 		Random random = new Random();
 		int option = random.nextInt(3);
 		if(option == LADDER) {
+		if((option == LADDER) && (position+dice <= 100)) {
 			position += dice;
 		}
 		else if(option == SNAKE) {
@@ -28,7 +29,7 @@ public class SnakeAndLadder {
 			position =0;
 		}
 	}
-
+}
 	public static void main(String[] args) {
 		while(position<100) {
 		int dice = diceRoll();
@@ -36,5 +37,6 @@ public class SnakeAndLadder {
 		optionCheck(dice);
 		System.out.println("position = "+position);
 		}
+			
 	}
 }
