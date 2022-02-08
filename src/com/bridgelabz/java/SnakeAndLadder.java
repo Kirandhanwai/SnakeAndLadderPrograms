@@ -16,28 +16,25 @@ public class SnakeAndLadder {
 		Random random = new Random();
 		int option = random.nextInt(3);
 		if(option == LADDER) {
-			System.out.println("LADDER");
-			position =position + dice;
+			position += dice;
 		}
 		else if(option == SNAKE) {
-			System.out.println("SNAKE");
-			position =position - dice;
+			position -= dice;
 		}
 		else {
-			System.out.println(NO_PLAY);
-			position=position;
+			position = position;
 		}
-		if (position<=0)
-			position=0;
+		if(position < 0) {
+			position =0;
+		}
 	}
 
 	public static void main(String[] args) {
-		System.out.println("dice= "+diceRoll());
+		while(position<100) {
 		int dice = diceRoll();
 		System.out.println("dice= "+dice);
 		optionCheck(dice);
 		System.out.println("position = "+position);
-
+		}
 	}
-
 }
